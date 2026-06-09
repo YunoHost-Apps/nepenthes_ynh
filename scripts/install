@@ -27,7 +27,7 @@ luarocks-5.4 install lunix
 
 ynh_config_add_nginx
 ynh_config_add_systemd
-yunohost service add "$app" --description="Nepenthes" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="$app" --log="/var/log/$app/$app.log"
 
 # Use logrotate to manage application logfile(s)
 ynh_config_add_logrotate
@@ -44,3 +44,4 @@ ynh_systemctl --service="$app" --action="start" --wait_until="Startup HTTP:" --t
 #=================================================
 
 ynh_script_progression "Installation of $app completed"
+
