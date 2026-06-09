@@ -2,10 +2,8 @@
 # Simple config for testing.
 #
 ---
-http_host: '::'
+http_host: '127.0.0.1'
 http_port: __PORT__
-# If true, Nepenthes will fork into the background and redirect logging output to Syslog. Default is false.
-#detach: true # for some reason this fails
 templates: 
   - './templates'
 log_level: debug
@@ -30,4 +28,3 @@ silos:
     wordlist: '/usr/share/dict/words'
     corpus: './mishmash.txt'
     template: 'default'
-     
