@@ -1,0 +1,33 @@
+#
+# Simple config for testing.
+#
+---
+http_host: '::'
+http_port: __PORT__
+# If true, Nepenthes will fork into the background and redirect logging output to Syslog. Default is false.
+#detach: true # for some reason this fails
+templates: 
+  - './templates'
+log_level: debug
+seed_file: './seed.txt'
+min_wait: 12
+max_wait: 15
+
+silos:
+  - name: default
+    wordlist: '/usr/share/dict/words'
+    corpus: './mishmash.txt'
+    template: 'booleans'
+    min_wait: 0
+    max_wait: 100
+    
+    prefixes:
+#      - /maze
+#      - /otherplace
+      - __PATH__
+      
+  - name: extra
+    wordlist: '/usr/share/dict/words'
+    corpus: './mishmash.txt'
+    template: 'default'
+     

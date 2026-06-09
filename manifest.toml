@@ -1,0 +1,66 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "nepenthes"
+name = "Nepenthes"
+description.en = "Wasting crawler resources with fake slow-loading pages, optionally with Markov babble for poisoning."
+
+version = "2.7~ynh1"
+
+maintainers = ["lpryszcz", ]
+
+[upstream]
+license = "MIT"
+website = "https://zadzmo.org/code/nepenthes/"
+demo = "https://zadzmo.org/nepenthes-demo"
+code = "https://zadzmo.org/downloads/nepenthes"
+
+[integration]
+yunohost = '>= 12.1.17'
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = false
+
+ldap = "not_relevant"
+sso = "not_relevant"
+
+disk = "1M"
+ram.build = "1G"
+ram.runtime = "50M"
+
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/maze"
+
+[resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://zadzmo.org/downloads/nepenthes/file/nepenthes-2.7.tar.gz"
+        sha256 = "0fdf2202e1deefa82bc75bc08fe7714ce7306fd0c8bf6a399ced9cb141c4dbda"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+    group = "www-data:r-x"
+
+    [resources.permissions]
+    main.url = "/"
+    main.allowed = "visitors"
+    main.protected = true
+    main.show_tile = false
+
+    [resources.ports]
+    main.default = 8893
+    
+    [resources.apt]
+    # https://zadzmo.org/code/nepenthes/install-debian
+    packages = "lua5.4, liblua5.4-dev, lua-cqueues, lua-lpeg, lua-zlib, lua-luaossl, luarocks"
+

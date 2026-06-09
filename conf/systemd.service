@@ -1,0 +1,17 @@
+[Unit]
+Description=Nepenthes
+After=nginx.service
+
+[Service]
+Type=exec
+Restart=on-failure
+
+User=__APP__
+Group=__APP__
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/nepenthes config.yml &
+StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
