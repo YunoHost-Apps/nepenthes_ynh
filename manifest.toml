@@ -63,4 +63,6 @@ ram.runtime = "50M"
     [resources.apt]
     # https://zadzmo.org/code/nepenthes/install-debian
     packages = "w3m, lua5.4, liblua5.4-dev, lua-cqueues, lua-lpeg, lua-zlib, lua-luaossl, luarocks"
-
+    packages_from_raw_bash = """
+if [ ! -s /etc/dictionaries-common/words ]; then echo "wamerican-small"; fi
+   """

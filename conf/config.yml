@@ -4,8 +4,6 @@
 ---
 http_host: '::'
 http_port: __PORT__
-# If true, Nepenthes will fork into the background and redirect logging output to Syslog. Default is false.
-#detach: true # for some reason this fails
 templates: 
   - './templates'
 log_level: debug
