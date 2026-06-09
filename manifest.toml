@@ -25,10 +25,9 @@ multi_instance = false
 ldap = "not_relevant"
 sso = "not_relevant"
 
-disk = "1M" # 780M with dependencies
+disk = "1M" # 100M with dependencies
 ram.build = "200M"
 ram.runtime = "50M"
-
 
 [install]
     [install.domain]
