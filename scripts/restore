@@ -33,7 +33,7 @@ yunohost service add "$app" --description="Nepenthes" --log="/var/log/$app/$app.
 #=================================================
 ynh_script_progression "Reloading web server and $app's service..."
 
-ynh_systemctl --service="$app" --action="start" --wait_until="Startup HTTP:" --timeout=30
+ynh_systemctl --service="$app" --action="start" --wait_until="Startup HTTP:" --timeout=10
 
 ynh_systemctl --service=nginx --action=reload
 
