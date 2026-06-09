@@ -62,5 +62,5 @@ ram.runtime = "50M"
     
     [resources.apt]
     # https://zadzmo.org/code/nepenthes/install-debian
-    packages = "lua5.4, liblua5.4-dev, lua-cqueues, lua-lpeg, lua-zlib, lua-luaossl, luarocks"
+    packages = "w3m, lua5.4, liblua5.4-dev, lua-cqueues, lua-lpeg, lua-zlib, lua-luaossl, luarocks"
 
