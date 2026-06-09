@@ -32,9 +32,9 @@ yunohost service add $app --description="$app" --log="/var/log/$app/$app.log"
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service=$app --action="start" --wait_until="Startup HTTP:" --timeout=10
-
 ynh_systemctl --service=nginx --action=reload
+
+ynh_systemctl --service=$app --action="start" --wait_until="Startup HTTP:" --timeout=30
 
 #=================================================
 # END OF SCRIPT

@@ -20,8 +20,6 @@ silos:
     max_wait: 100
     
     prefixes:
-#      - /maze
-#      - /otherplace
       - __PATH__
       
   - name: extra
