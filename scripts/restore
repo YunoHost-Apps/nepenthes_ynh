@@ -17,12 +17,15 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
 
+## this is needed on fresh system!
+# https://zadzmo.org/code/nepenthes/install-debian
+luarocks-5.4 install lunix
+
 ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_restore "/etc/systemd/system/$app.service"
 systemctl enable $app.service --quiet
-
-yunohost service add $app --description="Nepenthes" --log="/var/log/$app/$app.log"
+yunohost service add $app --description="$app" --log="/var/log/$app/$app.log"
 
 #=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
