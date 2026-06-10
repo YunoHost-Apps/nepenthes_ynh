@@ -44,4 +44,3 @@ ynh_systemctl --service="$app" --action="start" --wait_until="Startup HTTP:" --t
 #=================================================
 
 ynh_script_progression "Installation of $app completed"
-

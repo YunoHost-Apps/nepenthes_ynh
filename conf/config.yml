@@ -17,7 +17,7 @@ silos:
     corpus: './mishmash.txt'
     template: 'booleans'
     min_wait: 0
-    max_wait: 100
+    max_wait: 15 # 100 # this may result in timeout during CI
     
     prefixes:
       - __PATH__
