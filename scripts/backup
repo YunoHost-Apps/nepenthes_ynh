@@ -18,6 +18,12 @@ ynh_backup "$install_dir"
 ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 #=================================================
+# BACKUP LOGROTATE CONFIGURATION
+#=================================================
+
+ynh_backup "/etc/logrotate.d/$app"
+
+#=================================================
 # BACKUP SYSTEMD
 #=================================================
 
